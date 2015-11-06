@@ -52,7 +52,7 @@ class Overpass(object):
         :param xml_parser: The xml parser to use
         :type xml_parser: Integer
         """
-        self.url = url
+        self.url = url.rstrip('/')
         self._regex_extract_error_msg = re.compile(b"\<p\>(?P<msg>\<strong\s.*?)\</p\>")
         self._regex_remove_tag = re.compile(b"<[^>]*?>")
         if read_chunk_size is None:
